@@ -1,0 +1,100 @@
+body {
+    background-color: rgb(0, 137, 250);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centre horizontalement */
+    align-items: center;
+    /* Centre verticalement */
+    height: 100vh;
+    /* Prend toute la hauteur de la fenêtre */
+    margin: 0;
+    /* Supprime les marges par défaut du body */
+    gap: 30px;
+}
+
+.ecran {
+    background-color: white;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+hr {
+    height: 5px;
+    width: 100%;
+    background-color: black;
+}
+
+.surface {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    width: 100%;
+    height: 85%;
+}
+
+.personnage {
+    height: 70px;
+    position: relative;
+    top: 15px;
+    transition: transform 0.5s;
+}
+
+.boule {
+    border: solid 1px;
+    border-radius: 100%;
+    height: 20px;
+    width: 20px;
+    background-color: black;
+    position: relative;
+    top: 10px;
+    animation: none;
+
+}
+
+@keyframes translateX {
+    to {
+        transform: translateX(-650px);
+    }
+
+}
+@keyframes jump {
+    0% {
+        transform: translateY(0); /* Position de départ */
+    }
+    50% {
+        transform: translateY(-100px); /* Hauteur du saut */
+    }
+    100% {
+        transform: translateY(0); /* Retour à la position de départ */
+    }
+}
+
+.bouttons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+button {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border-color: white;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.stop {
+    animation: translateX infinite 1.5s linear; /* Arrête l'animation */
+}
+.sauter {
+    animation: jump 0.5s ease;
+}
+
